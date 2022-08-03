@@ -11,12 +11,10 @@ const rl = readline.createInterface({input: process.stdin,output: process.stdout
 let A, B;
 
 if((A==undefined) && (B==undefined)){
-    input();//input과 ouput시점이 바뀌는건 콜백함수 때문인가?
-    rl.on('close',function(){
-        output();
-        process.exit();
-    });
+    input();
 }
+output();
+
 
 
 
@@ -46,7 +44,10 @@ function check(){
 
 //결과 출력
 function output(){
-    console.log(A+B);
+    rl.on('close',function(){
+        console.log(A+B);
+        process.exit();
+    });
 }
 
 
