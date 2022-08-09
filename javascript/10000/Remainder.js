@@ -18,10 +18,10 @@ if((A===undefined)&&(B===undefined)&&(C===undefined)){
         }
     });
     rl.on('close',function(){
-        output();
         process.exit();
     });
 }
+output();
 
 //입력 값 확인(2<=value<=10000)
 function check(value){
